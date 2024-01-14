@@ -7,7 +7,7 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: pink
+      primary: black
       accent: blue
       toggle:
         icon: material/toggle-switch
@@ -16,7 +16,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: pink
+      primary: black
       accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
@@ -51,7 +51,40 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks 
+  - awesome-pages:
+      collapse_single_pages: false
+  - i18n:
+      languages:
+        es: "Español"
+        en: "English"
+      default_language: 'en'
+      no_translation:
+        en: "This page isn't translated to English."
+        es: "Esta página no está traducida al español."
+      translate_nav:
+        en:
+          section title: "Section"
+          subsection: "Subsection"
+          page title: "Page with title translated"
+        es:
+          section title: "Sección"
+          subsection: "Subsección"
+          page title: "Página con título traducido"
 
+
+extra:
+  # Default mkdocs-material alternate links for untranslated pages
+  # https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language-selector
+  # For translated pages the language name is replaced by the string configured in i18n plugin
+  # secction and link is replaced by the link to the translated page
+  alternate:
+    - name: "English (Home)"
+      link: ""
+      lang: en
+
+    - name: "Español (Inicio)"
+      link: index.es/
+      lang: es
 
 extra_javascript:
   - javascripts/mathjax.js

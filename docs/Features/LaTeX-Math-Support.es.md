@@ -1,3 +1,7 @@
+---
+title: LaTeX Math Support
+---
+
 # LaTeX Math Support
 
 LaTeX math is supported using MathJax.
